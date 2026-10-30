@@ -25,4 +25,14 @@ app.get('/users/:id', async (req, res) => {
   res.json(rows[0]);
 });
 
+app.post('/login', (req, res) => {
+  const { email, password } = req.body;
+
+  if (email === 'a@test.fr' && password === 'secret') {
+    return res.sendStatus(200);
+  }
+
+  res.sendStatus(401);
+});
+
 module.exports = app;
