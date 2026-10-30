@@ -40,9 +40,7 @@ describe('GET /users/:id', () => {
 
     expect(res.status).toBe(400);
 
-    // Vérifie que la table existe toujours et contient Alice.
     const { rows } = await db.query('SELECT count(*) FROM users');
-
     expect(Number(rows[0].count)).toBe(1);
   });
 });
